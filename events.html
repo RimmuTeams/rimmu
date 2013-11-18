@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Events</title>
+		<meta name="description" content="">
+		<meta name="author" content="Rimmu Team">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jQuery Visualize Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.visualize.css'>
+		
+		<!-- jQuery jGrowl Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jgrowl.css'>
+
+		<!-- jQuery FullCalendar Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+
+		<!-- CSS styles -->
+		<link rel='stylesheet' type='text/css' href='css/dark.css'>
+		
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="img/icons/apple-touch-icon-57-precomposed.png">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/jquery-ui-1.10.2.custom.min.js"></script>
+
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Tooltips
+				$('[title]').tooltip({
+					placement: 'top'
+				});
+				
+				// Tabs
+				$('.demoTabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+					$('.fullcalendar, .full-calendar-gcal').fullCalendar('render'); // Refresh jQuery FullCalendar for hidden tabs
+				})
+
+			});
+		</script>
+		
+	</head>
+	<body>
+	
+		<!-- Full height wrapper -->
+		<div id="wrapper">
+			
+			<!-- Main page header -->
+			<header id="header" class="container">
+				
+				<!-- Alternative navigation -->
+				<nav>
+					<ul>
+						<li>
+							<form class="nav-search">
+								<input type="text" placeholder="Search&hellip;">
+							</form>
+						</li>
+						<li>
+							<div class="btn-group">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									User Name
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#"><span class="awe-user"></span> Profile</a></li>
+									<li><a href="#"><span class="awe-cog"></span> Settings</a></li>
+									<li><a href="#"><span class="awe-money"></span> Make a Deposit</a></li>
+									<li class="divider"></li>
+									<li><a href="#"><span class="awe-flag"></span> Help</a></li>
+									<li><a href="#"><span class="awe-pencil"></span> Make Money</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</nav>
+				<!-- /Alternative navigation -->
+
+				<!-- Main page logo -->
+				<h1><a href="index.html" class="brand">Rimmu</a></h1>
+
+				
+			</header>
+			<!-- /Main page header -->
+			
+			<!-- Main page container -->
+			<section class="container" role="main">
+
+				<!-- Left (navigation) side -->
+				<div class="navigation-block">
+
+					<!-- User profile -->
+					<section class="user-profile">
+						<figure>
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<figcaption>
+								<strong><a href="#" class="">User Name</a></strong>
+								<em>student</em>
+								<ul>
+									<li><a class="btn btn-danger btn-flat" data-toggle="modal" href="#notifModal" title="Notifications"><span class="awe-globe"> 1</span></a></li>
+									<li><a class="btn btn-primary btn-flat" data-toggle="modal" href="#inboxModal" title="Message inbox"><span class="awe-envelope"></span> </a></li>
+								</ul>
+							</figcaption>
+						</figure>
+					</section>
+					<!-- /User profile -->
+					
+					<!-- Sample left search bar -->
+					<section class="balance">
+						<h2>Your Point</h2>
+						<strong>1000</strong>
+					</section>
+					<!-- /Sample left search bar -->
+				
+					<!-- Responsive navbar button -->
+					<div class="navbar">
+						<a class="btn btn-navbar btn-block btn-large" data-toggle="collapse" data-target=".nav-collapse"><span class="awe-home"></span> Dashboard</a>
+					</div>
+					<!-- /Responsive navbar button -->
+
+					<!-- Main navigation -->
+					<nav class="main-navigation nav-collapse collapse" role="navigation">
+						<ul>
+							<li><a href="index.html" class="no-submenu"><span class="awe-home"></span>Dashboard</a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-trophy"></span>Tournament</a></li>
+							<li class="current"><a href="#" class="no-submenu"><span class="awe-bookmark"></span>Events</a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-edit"></span>Quiz</a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-cloud"></span>Project <span class="badge">1</span></a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-book"></span>Course <span class="badge">7</span></a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-folder-close"></span>Drive</a></li>
+							<li><a href="#" class="no-submenu"><span class="awe-calendar"></span>Calendar</a></li>
+						</ul>
+					</nav>
+					<!-- /Main navigation -->
+					
+					<!-- Sample side note -->
+					<section class="side-note">
+						<div class="side-note-container">
+							<h2>Sample Side Note</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</p>
+						</div>
+						<div class="side-note-bottom"></div>
+					</section>
+					<!-- /Sample side note -->
+					
+				</div>
+				<!-- Left (navigation) side -->
+				
+				<!-- Right (content) side -->
+				<div class="content-block" role="main">
+
+
+					<!-- Page header 
+					<article class="page-header">
+						<h1>Welcome, username!</h1>
+					</article> -->
+					<!-- /Page header -->
+
+					<!-- Grid row -->
+					<div class="row">
+					
+					<div class="span12">
+						<form class="form-search">
+							<div class="control-group">
+								<div class="controls">
+									<input class="span9" type="text" placeholder="Search Events">
+								</div>
+							</div>
+						</form>
+					</div>
+					
+					</div>
+					<!-- /Grid row -->
+					<a href="#" class="btn btn-flat" ><span class="awe-plus"></span> Create </a> 
+					<a href="#" class="btn btn-flat"> My Events</a> 
+					<!-- Grid row -->
+					<div class="row">
+					
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+						
+						
+					</div>
+					<!-- /Grid row -->
+					
+					<!-- Grid row -->
+					<div class="row">
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+					
+					<!-- Data block -->
+					<article class="span4 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Events Title</h2>
+							</header>
+							<section>
+								<ul class="unstyled">
+									<li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</li>
+									<li><a class="btn btn-info" href="#">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+						
+						
+					</div>
+					<!-- /Grid row -->
+					
+				</div>
+				<!-- /Right (content) side -->
+				
+			</section>
+			<!-- /Main page container -->
+			
+			<!-- Sticky footer push -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Full height wrapper -->
+		
+		<div class="modal fade hide" id="notifModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Modal header</h3>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae enim ac ligula eleifend commodo id quis risus. Donec consequat lorem et metus facilisis vitae dapibus felis fermentum. Aenean imperdiet nibh vitae sem condimentum pharetra. Mauris molestie molestie faucibus. Aenean sit amet sem orci, at adipiscing dolor. Fusce feugiat odio vitae erat commodo sed accumsan ante sollicitudin. Integer mollis, tellus vel feugiat varius, risus quam lacinia erat, eu ultricies urna dolor ac metus. Mauris vestibulum euismod lectus, vitae vehicula nisl ullamcorper sit amet. In ac consectetur purus. Integer orci ipsum, sollicitudin non rutrum id, adipiscing eu augue. Nulla eget lorem elit. Curabitur vehicula porttitor suscipit.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-alt" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-alt btn-primary">Save changes</a>
+			</div>
+		</div>
+		
+		<div class="modal fade hide" id="inboxModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Modal header</h3>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae enim ac ligula eleifend commodo id quis risus. Donec consequat lorem et metus facilisis vitae dapibus felis fermentum. Aenean imperdiet nibh vitae sem condimentum pharetra. Mauris molestie molestie faucibus. Aenean sit amet sem orci, at adipiscing dolor. Fusce feugiat odio vitae erat commodo sed accumsan ante sollicitudin. Integer mollis, tellus vel feugiat varius, risus quam lacinia erat, eu ultricies urna dolor ac metus. Mauris vestibulum euismod lectus, vitae vehicula nisl ullamcorper sit amet. In ac consectetur purus. Integer orci ipsum, sollicitudin non rutrum id, adipiscing eu augue. Nulla eget lorem elit. Curabitur vehicula porttitor suscipit.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-alt" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-alt btn-primary">Save changes</a>
+			</div>
+		</div>
+
+
+		
+		<!-- Main page footer -->
+		<footer id="footer" class="container">
+			<p>Rimmu 2013.</p>
+			<ul>
+				<li><a href="#" class="">About</a></li>
+				<li><a href="#" class="">Terms</a></li>
+				<li><a href="#" class="">Privacy</a></li>
+				<li><a href="#" class="">Policy & Safety</a></li>
+				<li><a href="#" class="">Support</a></li>
+				<li><a href="#" class="">Copyright</a></li>
+				<li><a href="#" class="">Advertising</a></li>
+				<li><a href="#" class="">Send feedback</a></li>
+			</ul>
+			<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+		</footer>
+		<!-- /Main page footer -->
+		
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<!--
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		<script src="js/bootstrap/bootstrap-button.js"></script>
+		<script src="js/bootstrap/bootstrap-alert.js"></script>
+		<script src="js/bootstrap/bootstrap-popover.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-transition.js"></script>
+		-->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+		
+		<!-- Block TODO list -->
+		<script>
+			$(document).ready(function() {
+				
+				$('.todo-block input[type="checkbox"]').click(function(){
+					$(this).closest('tr').toggleClass('done');
+				});
+				$('.todo-block input[type="checkbox"]:checked').closest('tr').addClass('done');
+				
+			});
+		</script>
+		
+		<!-- jQuery Visualize -->
+		<!--[if lte IE 8]>
+			<script language="javascript" type="text/javascript" src="js/plugins/visualize/excanvas.js"></script>
+		<![endif]-->
+		<script src="js/plugins/visualize/jquery.visualize.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+
+				// Draw graph via function
+				function responsiveVisualize() {
+					var chartWidth = $(('.chart')).parent().width()*0.9;
+				
+					$('.chart').hide().visualize({
+						type: 'pie',
+						width: chartWidth,
+						height: chartWidth,
+						colors: ['#389abe','#fa9300','#6b9b20','#d43f3f','#8960a7','#33363b','#b29559','#6bd5b1','#66c9ee'],
+						lineDots: 'double',
+						interaction: false
+					});
+				}
+
+				$(window).on("resize load", function(){
+					$('.visualize').remove();
+					responsiveVisualize();
+				});
+			
+			});
+		</script>
+		
+		<!-- jQuery Flot Charts -->
+		<!--[if lte IE 8]>
+			<script language="javascript" type="text/javascript" src="js/plugins/flot/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="js/plugins/flot/jquery.flot.min.js"></script>
+		<script src="js/plugins/flot/jquery.flot.resize.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				// Demo #1
+				// we use an inline data source in the example, usually data would be fetched from a server
+				var data = [], totalPoints = 300;
+				function getRandomData() {
+					if (data.length > 0)
+						data = data.slice(1);
+				
+					// do a random walk
+					while (data.length < totalPoints) {
+						var prev = data.length > 0 ? data[data.length - 1] : 50;
+						var y = prev + Math.random() * 10 - 5;
+						if (y < 0)
+							y = 0;
+						if (y > 100)
+							y = 100;
+						data.push(y);
+					}
+				
+					// zip the generated y values with the x values
+					var res = [];
+					for (var i = 0; i < data.length; ++i)
+						res.push([i, data[i]])
+					return res;
+				}
+				
+				// setup control widget
+				var updateInterval = 30;
+				$("#updateInterval").val(updateInterval).change(function () {
+					var v = $(this).val();
+					if (v && !isNaN(+v)) {
+						updateInterval = +v;
+					if (updateInterval < 1)
+						updateInterval = 1;
+					if (updateInterval > 2000)
+						updateInterval = 2000;
+					$(this).val("" + updateInterval);
+					}
+				});
+				
+				// setup plot
+				var options = {
+					series: {
+						shadowSize: 0,
+						color: '#4986E7',
+						lines: {
+							fill: true
+						}
+					}, // drawing is faster without shadows
+					yaxis: { min: 0, max: 100 },
+					xaxis: { show: false },
+					grid: { backgroundColor: '#ffffff', borderColor: 'transparent' },
+				};
+				var plot = $.plot($("#demo-1"), [ getRandomData() ], options);
+				
+				function update() {
+					plot.setData([ getRandomData() ]);
+					// since the axes don't change, we don't need to call plot.setupGrid()
+					plot.draw();
+					setTimeout(update, updateInterval);
+				}
+				
+				update();
+			
+			});
+		</script>
+		
+		<!-- jQuery jGrowl -->
+		<script type="text/javascript" src="js/plugins/jGrowl/jquery.jgrowl.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				// This value can be true, false or a function to be used as a callback when the closer is clciked
+				$.jGrowl.defaults.closer = function() {
+					console.log("Closing everything!", this);
+				};
+				
+				$.jGrowl("Hello stranger!", { 
+					theme: 'success'
+				});
+				
+				$.jGrowl("Sticky notification with a header", {
+					header: 'Ernest Lawrence',
+					sticky: true
+				});
+				
+				$.jGrowl.defaults.closerTemplate = '<div>hide all notifications</div>';
+				
+			});
+			
+		</script>
+		
+		<!-- jQuery sparklines -->
+		<script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+		<script>
+			$(document).ready(function() {
+			
+				// Sample line chart
+				$('.sparkline.pie').sparkline('html', {
+					type: 'pie',
+					height: '60px',
+					width: '60px'
+				});
+				
+				// Sample bar chart
+				$('.sparkline.bar').sparkline([17, 23, 18, 14, 18, 19, 13], {
+					type: 'bar',
+					height: '60px',
+					barWidth: '12px',
+					barColor: '#4986E7',
+					tooltipFormat: '{{offset:names}}: {{value}} orders',
+					tooltipValueLookups: {
+					names: {
+						0: 'Monday',
+						1: 'Tuesday',
+						2: 'Wednesday',
+						3: 'Thursday',
+						4: 'Friday',
+						5: 'Saturday',
+						6: 'Sunday'
+						}
+					}
+				});
+				
+			});
+		</script>
+
+		<!-- jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/jquery.fullcalendar.min.js"></script>
+		
+		<!-- Google Calendar plugin for jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/gcal.js"></script>
+		<script>
+			$(document).ready(function() {
+			
+				var date = new Date();
+				var d = date.getDate();
+				var m = date.getMonth();
+				var y = date.getFullYear();
+				
+				$('.full-calendar-demo').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="awe-circle-arrow-left"></span>',
+						next: '<span class="awe-circle-arrow-right"></span>'
+					},
+					editable: true,
+					events: [
+						{
+							title: 'All Day Event',
+							start: new Date(y, m, 1)
+						},
+						{
+							title: 'Long Event',
+							start: new Date(y, m, d-5),
+							end: new Date(y, m, d-2)
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d-3, 16, 0),
+							allDay: false
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d+4, 16, 0),
+							allDay: false
+						},
+						{
+							title: 'Meeting',
+							start: new Date(y, m, d, 10, 30),
+							allDay: false
+						},
+						{
+							title: 'Lunch',
+							start: new Date(y, m, d, 12, 0),
+							end: new Date(y, m, d, 14, 0),
+							allDay: false
+						},
+						{
+							title: 'Birthday Party',
+							start: new Date(y, m, d+1, 19, 0),
+							end: new Date(y, m, d+1, 22, 30),
+							allDay: false
+						},
+						{
+							title: 'Walking Pixels website',
+							start: new Date(y, m, 28),
+							end: new Date(y, m, 29),
+							url: 'http://www.walkingpixels.com/'
+						}
+					]
+				});
+				
+				$('.full-calendar-gcal').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="awe-arrow-left"></span>',
+						next: '<span class="awe-arrow-right"></span>'
+					},
+					events: {
+						url: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
+						className: 'gcal-event', // an option!
+						currentTimezone: 'America/Chicago' // an option!
+					}
+				});
+				
+			});
+		</script>
+
+		<!-- Slim scroll -->
+		<script type="text/javascript" src="js/plugins/slimScroll/jquery.slimscroll.js"></script>
+		<script>
+			$(document).ready(function() {
+			
+				$('#slimScroll1').slimScroll({
+					height: '250px'
+				});
+
+			});
+		</script>
+
+	</body>
+</html>

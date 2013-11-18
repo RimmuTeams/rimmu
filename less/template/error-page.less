@@ -1,0 +1,38 @@
+
+
+/* Error pages */
+.error-page {
+	background-image: none;
+	position: static;
+	.error-container {
+		width: 90%;
+		max-width: 600px;
+		text-align: center;
+		margin: @baseMargin * 4 auto 0;
+		.clearfix();
+		h1 {
+			margin: 0;
+			font-size: @baseFontSize * 13;
+			line-height: normal;
+			color: @white;
+			text-shadow: 0 0 10px #fff, 0 4px 3px #fff, 0 9px 3px #ddd, 0 12px 1px #ccc, 0 14px 5px rgba(0, 0, 0, 0.2), 0 20px 10px rgba(0, 0, 0, 0.1), 0 15px 80px rgba(0, 0, 100, 0.2);
+			  -webkit-transform: rotate(6.5deg) rotateX(20deg) skewX(-4deg);
+				 -moz-transform: rotate(6.5deg) rotateX(20deg) skewX(-4deg);
+				   -o-transform: rotate(6.5deg) rotateX(20deg) skewX(-4deg);
+					  transform: rotate(6.5deg) rotateX(20deg) skewX(-4deg);
+		}
+		p {
+			margin: @baseMargin / 2 0 @baseMargin;
+			&.description {
+				margin: @baseMargin / 2 0;
+				font-size: @baseFontSize * 3;
+				line-height: normal;
+				color: @headingsColor;
+			}
+		}
+	}
+}
+.no-textshadow .error-page .error-container h1 {
+	text-shadow: none;
+	color: @templateColor;
+}

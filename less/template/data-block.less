@@ -1,0 +1,117 @@
+
+/* Data block grid */
+#grid > .core(40px, 20px);
+#grid > .fluid(6.136363636363636%, 2.386363636363636%);
+[class*="span"] {
+	margin-bottom: @baseMargin;
+}
+.data-block .row {
+	#grid > .core(36px, 20px);
+}
+.data-block .row > [class*="span"]:first-child {
+	margin-left: 0;
+}
+.data-block .data-container > *:last-child {
+	margin-bottom: @baseMargin;
+}
+.data-block .row,
+.data-block .row .row,
+.data-block .row-fluid {
+	margin-left: 0;
+}
+.data-block.span1 [class*="span"],
+.data-block.span2 [class*="span"],
+.data-block.span3 [class*="span"] {
+	width: auto;
+	float: none;
+	margin: 0 0 @gridGutterWidth 0;
+}
+
+/* Data blocks */
+.data-block {
+	position: relative;
+	margin-bottom: @baseMargin;
+	color: @blockTextColor;
+	.data-container {
+		padding: @baseMargin + 3 @baseMargin + 3 3px @baseMargin + 3;
+		background-color: @blockBackground;
+		border: 1px solid @blockBorderColor;
+		.clearfix();
+		.border-radius(2px 2px 0 0);
+		.box-sizing(border-box);
+		.box-shadow(~'0 0 3px rgba(0,0,0,0.15), 0 4px 0 -3px #fff, 0 4px 0 -2px #bec2c8, 0 8px 0 -5px #fff, 0 8px 0 -4px #bec2c8');
+		p {
+			line-height: 160%;
+		}
+		& + .data-container {
+			margin-top: @baseMargin;
+		}
+	}
+	> .data-block {
+		margin-top: @baseMargin;
+	}
+	&.decent {
+		.data-container {
+			.border-radius(2px);
+			box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+		}
+	}
+	&.raw {
+		.border-radius(0);
+		.data-container {
+			padding: 0;
+			background-color: transparent;
+			border: none;
+			.border-radius(0);
+			.box-shadow(none);
+		}
+		&.fit {
+			margin-top: @baseMargin + 5;
+		}
+	}
+}
+
+/* Data block header */
+.data-block header {
+	border-bottom: 1px solid @templateBorderColor;
+	padding-bottom: @baseMargin / 2;
+	margin-bottom: @baseMargin;
+	.clearfix();
+	h1 {
+		margin: 0;
+		display: inline-block;
+		line-height: normal;
+		font-size: @fontSizeLarge + 5;
+		.ie7-inline-block();
+	}
+	h2 {
+		margin: 0;
+		display: inline-block;
+		line-height: normal;
+		font-size: @fontSizeLarge;
+		.ie7-inline-block();
+	}
+}
+
+/* Data block footer */
+.data-block footer {
+	text-transform: uppercase;
+	font-size: @baseFontSize - 3;
+	margin: @baseMargin + 3 0 @baseMargin;
+	color: @blockFooterColor;
+	&.info,
+	&.warning {
+		padding-left: 22px;
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-image: url("@{dataBlockFooterInfo}");
+	}
+	&.warning {
+		background-image: url("@{dataBlockFooterWarning}");
+	}
+	p {
+		font-size: @baseFontSize - 3;
+		line-height: normal;
+		margin: 0;
+	}
+}

@@ -1,0 +1,22 @@
+
+/* Loading */
+.loading {
+	display: inline-block;
+	background-image: url("@{huragaLoading}");
+	background-repeat: no-repeat;
+	background-position: center;
+	.hide-text();
+	.square(24px);
+	&.dark {
+		background-image: url("@{huragaDarkLoading}");
+	}
+	&.red {
+		background-image: url("@{huragaRedLoading}");
+	}
+	&.green {
+		background-image: url("@{huragaGreenLoading}");
+	}
+	&.blue {
+		background-image: url("@{huragaBlueLoading}");
+	}
+}
