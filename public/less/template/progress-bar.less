@@ -1,0 +1,25 @@
+
+/* Progress bars */
+.progress {
+	margin-bottom: @baseMargin / 2;
+	background-image: none;
+	border: 1px solid #e0e0e0;
+	.border-radius(@baseBorderRadius);
+	.box-shadow(0 0px 3px rgba(0, 0, 0, 0.1) inset);
+	.reset-filter();
+	&:last-child {
+		margin-bottom: 0;
+	}
+	.bar:last-child {
+		.border-right-radius(@baseBorderRadius);
+	}
+	&.progress-line {
+		height: @baseLineHeight / 2;
+	}
+}
+.progress-inverse .bar {
+	#gradient > .vertical(lighten(#33363B, 15%), #33363B);
+}
+.progress-inverse.progress-striped .bar {
+	#gradient > .striped(lighten(#33363B, 15%));
+}

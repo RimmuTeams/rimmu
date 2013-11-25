@@ -1,0 +1,102 @@
+
+
+/* Gallery */
+.thumbnails {
+	#grid > .core(35px, 20px);
+	li {
+		margin: 0;
+		position: relative;
+		margin-bottom: 20px;
+		margin-left: 20px;
+		.thumbnail-actions {
+			margin: 0;
+			display: block;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			font-size: @fontSizeSmall;
+			list-style: none;
+			color: @white;
+			background-color: @linkColor;
+			.opacity(0);
+			li {
+				margin: 0;
+				display: inline-block;
+				& + li {
+				}
+				a {
+					padding: 2px 4px 3px;
+					display: block;
+					color: @white;
+					.opacity(80);
+					&:hover {
+						.opacity(100);
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		&:hover .thumbnail-actions {
+			.opacity(85);
+		}
+	}
+}
+.thumbnail {
+	& + p {
+		margin-top: @baseMargin;
+	}
+}
+.data-block .thumbnails {
+	margin-bottom: 0;
+	&.row-fluid {
+		margin-left: 0;
+	}
+	.thumbnail {
+		background-color: @white;
+		.box-shadow(none);
+	}
+}
+.data-block .thumbnails.raw {
+	.thumbnail {
+		border: none;
+		padding: 0;
+		.box-shadow(0 0 3px rgba(0,0,0,0.2));
+	}
+}
+.data-block.raw .thumbnails {
+	margin-left: auto;
+	margin-right: auto;
+}
+.data-block.raw section > * + .thumbnails {
+	margin-top: @baseMargin;
+}
+
+/* Form gallery */
+.form-gallery {
+	background: none;
+	border: none;
+	.border-radius(none);
+	.box-shadow(none);
+	li input[type="checkbox"] {
+		margin: 0;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+	.thumbnails .thumbnail {
+		background-color: @white;
+		&.active {
+			border-color: @templateColor;
+			background-color: lighten(@templateColor, 10%);
+		}
+	}
+	.form-actions {
+		padding: 0;
+		margin: 0;
+		border: none;
+		background: none;
+		[class*="span"] {
+			margin-bottom: 0;
+		}
+	}
+}

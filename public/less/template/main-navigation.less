@@ -1,0 +1,80 @@
+
+/* Navigation */
+.main-navigation {
+	margin-bottom: @baseMargin;
+	> ul {
+		margin: 0;
+		list-style: none;
+		border-bottom: 1px solid @templateBorderColor;
+		> li {
+			border-top: 1px solid @templateBorderColor;
+			a {
+				color: #939699;
+				display: block;
+				background-repeat: no-repeat;
+			}
+			> a {
+				line-height: 30px;
+				&:hover {
+					color: @templateColor;
+					text-decoration: none;
+					background-color: lighten(@bodyBackground, 2%);
+					& + ul {
+						background-color: lighten(@bodyBackground, 2%);
+					}
+				}
+				[class^="awe-"],
+				[class*=" awe-"] {
+					margin-right: 5px;
+					font-size: @baseFontSize + 2;
+				}
+			}
+			ul {
+				display: none;
+				margin: 0;
+				padding: 0 0 10px;
+				list-style: none;
+				li.active {
+					a {
+						color: @headingsColor;
+					}
+				}
+				a {
+					line-height: 24px;
+					padding-left: 36px;
+					background-image: url("@{navListStyle}");
+					background-position: 22px 9px;
+					&.current,
+					&:hover {
+						color: @headingsColor;
+						text-decoration: none;
+					}
+				}
+			}
+			&.current > a {
+				color: @templateColor;
+				[class^="awe-"], 
+				[class*=" awe-"] {
+					color: @templateColor;
+				}
+				& + ul {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/* Badge for navigation */
+.main-navigation {
+	.badge {
+		float: right;
+		padding: 1px 5px 2px;
+		margin: 7px 0 0 0;
+		font-size: @fontSizeSmall;
+		color: @white;
+		background-color: @templateColor;
+		cursor: help;
+		.border-radius(@baseBorderRadius);
+	}
+}

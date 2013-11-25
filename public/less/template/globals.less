@@ -1,0 +1,59 @@
+
+/* Global styles */
+html,
+body {
+	height: 100%;
+}
+body {
+	background-image: url("@{bodyBackgroundImage}");
+	background-repeat: repeat;
+	background-position: center center;
+	position: relative;
+}
+.container,
+.ie8 .container {
+	width: 940px;
+}
+.navigation-block {
+	width: 220px;
+	float: left;
+	.clearfix();
+	&.affix {
+		position: fixed;
+		top: 20px;
+	}
+	&.affix-bottom {
+		position: absolute;
+		top: auto;
+		bottom: 60px;
+	}
+	.navbar {
+		margin-bottom: 0;
+		.btn-navbar {
+			float: none;
+			margin: 0;
+			color: @huragaDark;
+			text-shadow: none;
+			text-align: left;
+		}
+		& + .side-note {
+			margin-top: @baseMargin / 2;
+		}
+	}
+
+}
+.content-block {
+	width: 700px;
+	float: right;
+	margin-left: 20px;
+	.clearfix();
+}
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 0 -@footerHeight;
+}
+#push {
+	height: @footerHeight;
+}

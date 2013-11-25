@@ -1,0 +1,147 @@
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	line-height: normal;
+	small {
+		font-weight: normal;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+}
+h1 {
+	font-size: @baseFontSize * 2;
+	margin: @baseMargin 0;
+}
+h2 {
+	font-size: @baseFontSize * 1.5;
+	margin: @baseMargin * 0.9 0;
+}
+h3 {
+	font-size: @baseFontSize * 1.15;
+	margin: @baseMargin * 0.8 0;
+}
+h4 {
+	font-size: @baseFontSize;
+	margin: @baseMargin * 0.7 0;
+}
+h5 {
+	font-size: @baseFontSize * 0.85;
+	text-transform: uppercase;
+	margin: @baseMargin * 0.6 0;
+}
+h6 {
+	font-size: @baseFontSize * 0.75;
+	text-transform: uppercase;
+	margin: @baseMargin * 0.5 0;
+}
+nav {
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		list-style-image: none;
+	}
+}
+blockquote,
+blockquote.pull-right {
+	clear: both;
+	margin: 0 0 @baseMargin;
+	small {
+		font-size: 10px;
+	}
+}
+code {
+	padding: 1px 3px;
+	background-color: @templateDark;
+	border: 1px solid #000;
+	color: @white;
+}
+pre {
+	border-color: @blockBorderColor;
+	.box-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+.label {
+	padding: 1px 4px;
+}
+a {
+	&.label:hover {
+		color: @white;
+		background-color: darken(@grayLight, 10%);
+		text-decoration: none;
+		cursor: pointer;
+	}
+	&.label-important:hover {
+		background-color: darken(@errorText, 10%);
+	}
+	&.label-warning:hover {
+		background-color: darken(@orange, 10%);
+	}
+	&.label-success:hover {
+		background-color: darken(@successText, 10%);
+	}
+	&.label-info:hover {
+		background-color: darken(@infoText, 10%);
+	}
+	&.label-inverse:hover {
+		background-color: darken(@grayDark, 10%);
+	}
+}
+dl.dl-horizontal {
+	dt,
+	dd {
+		line-height: @baseLineHeight * 1.2;
+	}
+	dt {
+		width: 100px;
+	}
+	dd {
+		margin-left: 130px;
+	}
+}
+
+/* Data block special */
+.data-block ol,
+.data-block ul {
+	margin-bottom: @baseMargin;
+	&.checkmark,
+	&.crossmark,
+	&.pointmark {
+		list-style: none;
+		margin-left: 0;
+		li {
+			padding-left: 15px;
+			background-position: left 7px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			background-image: url("@{listStyleCheck}");
+		}
+	}
+	&.crossmark li {
+		background-image: url("@{listStyleCross}");
+	}
+	&.pointmark li {
+		background-image: url("@{listStyleArrow}");
+		background-position: left 8px;
+	}
+}
+.data-block li {
+	line-height: @baseLineHeight + 2;
+}
+
+/* Icons */
+[class^="awe-"],
+[class*=" awe-"] {
+	height: auto;
+	width: auto;
+	line-height: normal;
+	vertical-align: middle;
+	background-image: none;
+}

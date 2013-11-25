@@ -1,0 +1,63 @@
+//
+// Custom mixins
+// --------------------------------------------------
+
+
+// Complementary colors
+@base:                 #fff;
+@complement1:          spin(@base, 180);
+@complement2:          darken(spin(@base, 180), 5%);
+@lighten1:             lighten(@base, 15%);
+@lighten2:             lighten(@base, 30%);
+
+// Subtle colors
+@base:                 #fff;
+@lighter1:             lighten(spin(@base, 5), 10%);
+@lighter2:             lighten(spin(@base, 10), 20%);
+@darker1:              darken(spin(@base, -5), 10%);
+@darker2:              darken(spin(@base, -10), 20%);
+
+
+// Replace text with image
+.image-replacer(@path, @repeat, @height, @width) {
+	display: block;
+	background-image: url("@{path}");
+	background-repeat: @repeat;
+	.hide-text();
+	.size(@height, @width);
+}
+
+// Make clean OL or UL list
+.clear-list() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Reset margin if only one
+.clear-orphan() {
+	&:only-of-type {
+		margin: 0;
+		float: none;
+	}
+}
+
+
+// Flat buttons
+.flatButtonBackground(@startColor, @typeColor) {
+	.reset-filter();
+	border: none;
+	background-image: none;
+	background-color: @startColor;
+	color: @typeColor;
+	text-shadow: none;
+	.box-shadow(none);
+	&:hover, &:active, &.active, &.disabled, &[disabled] {
+		color: @white;
+		background-color: #404040;
+	}
+	&:active, &.active {
+		outline: 0;
+		.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+	}
+}

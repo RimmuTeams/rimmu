@@ -1,0 +1,27 @@
+
+/* Alerts */
+.alert {
+	h4 {
+		margin: 0;
+	}
+	&.alert-white {
+		background-color: @white;
+		border-color: @templateBorderColor;
+		color: @blockTextColor;
+	}
+	&.alert-inverse {
+		background-color: @templateDark;
+		border-color: #000;
+		color: @white;
+		text-shadow: none;
+		.close {
+			color: white;
+		}
+	}
+}
+.raw .alert {
+	.box-shadow('0 1px 0 #fff');
+}
+form .alert {
+	.border-radius(0);
+}

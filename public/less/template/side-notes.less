@@ -1,0 +1,31 @@
+
+/* Side notes */
+.side-note {
+	background-image: url("@{sideNoteTop}");
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-top: 38px;
+	margin-bottom: @baseMargin - 10;
+	.side-note-container {
+		background-image: url("@{sideNoteMiddle}");
+		background-repeat: repeat-y;
+		background-position: top center;
+		padding: 1px 20px 0;
+		p,
+		h2 {
+			margin: 0;
+			color: #807160;
+			line-height: 20px;
+			font-size: @fontSizeSmall;
+		}
+		h2 {
+			color: #665b4c;
+		}
+	}
+	.side-note-bottom {
+		background-image: url("@{sideNoteBottom}");
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		padding-bottom: 34px;
+	}
+}
