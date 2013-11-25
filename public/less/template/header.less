@@ -1,0 +1,116 @@
+
+/* Main header */
+#header {
+	position: relative;
+	padding: @baseMargin 0;
+	margin-bottom: @baseMargin;
+	border-bottom: 1px solid @templateBorderColor;
+	& > h1 {
+		margin: 0;
+		& + p {
+			margin: 0;
+			font-size: @fontSizeSmall;
+			text-shadow: 0 1px 0 #fff;
+		}
+	}
+	.brand {
+		.hide-text();
+		display: block;
+		width: 114px;
+		height: 37px;
+		background-image: url("@{templateLogo}");
+	}
+	nav {
+		float: right;
+		margin-top: -@baseMargin;
+		height: 30px;
+		.box-shadow(0 0 2px rgba(0,0,0,0.4));
+		.border-radius(0 0 3px 3px);
+		#gradient > .vertical(#4e525a, #3a3d45);
+		ul {
+			margin: 0;
+			.clearfix();
+			> li {
+				float: left;
+				display: block;
+				& + li {
+					border-right: 1px solid #363840;
+				}
+				&:last-child {
+					border: none;
+				}
+				> a,
+				a.btn {
+					font-size: @fontSizeSmall !important;
+					padding: 6px 15px 0;
+					color: #b8babf;
+					display: block;
+					text-shadow: 0 1px 0 #000;
+					background: none;
+					border: none;
+					.box-shadow(none);
+					&:hover,
+					a.btn:hover {
+						color: #fff;
+						text-decoration: none;
+						background: none;
+						.caret {
+							border-top-color: #fff;
+						}
+					}
+				}
+				a.btn {
+					padding: 6px 15px 5px;
+				}
+				.dropdown-menu {
+					margin: 0;
+					.border-radius(0 0 3px 3px);
+					#gradient > .vertical(#4e525a, #3a3d45);
+					li {
+						float: none;
+						border: none;
+					}
+					a {
+						color: #b8babf;
+						padding: 5px 15px;
+						text-shadow: 0 1px 0 #000;
+						background: none;
+						&:hover {
+							color: #fff;
+							text-decoration: none;
+							background: none;
+						}
+					}
+				}
+				.btn-group.open .btn.dropdown-toggle {
+					color: #fff;
+					text-decoration: none;
+					background: none;
+					.box-shadow(none);
+				}
+				.btn .caret {
+					margin-left: 3px;
+					border-top-color: #b8babf;
+				}
+				.nav-search {
+					background-color: transparent;
+					border: none;
+					margin: 4px 0 4px 4px;
+					.box-shadow(none);
+					input {
+						height: 14px;
+						width: 100px;
+						margin: 0;
+						padding: 3px;
+						border-color: #fff;
+						.transition(width .3s ease);
+						&:focus {
+							width: 180px;
+							.box-shadow(none);
+						}
+					}
+				}
+			}
+		}
+	}
+}

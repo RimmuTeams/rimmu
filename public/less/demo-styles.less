@@ -1,0 +1,39 @@
+
+/* Demo styles */
+.data-block .row-fluid.demo,
+.data-block .row.demo {
+	color: #fff;
+	line-height: 30px;
+	min-height: 30px;
+	text-align: center;
+	.border-radius(3px);
+	&:last-child {
+		margin-bottom: 0;
+	}
+	& > div {
+		.border-radius(3px);
+		background-color: #4A525A;
+		& > .row,
+		& > .row-fluid {
+			& > div {
+				margin-bottom: 0;
+				.border-radius(3px);
+				background-color: #657078;
+			}
+		}
+	}
+}
+
+.demo > input,
+.demo > select {
+	display: block !important;
+	margin-bottom: 10px;
+}
+
+// Docs styles
+.navigation-block > a {
+	margin: 0 0 @baseMargin;
+	span {
+		font-size: @fontSizeSmall;
+	}
+}

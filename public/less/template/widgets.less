@@ -1,0 +1,62 @@
+
+
+/* Widgets */
+.widgets {
+	text-align: center;
+	list-style: none;
+	.clearfix();
+	> li {
+		min-height: 90px;
+		text-align: center;
+		border-right: 1px solid @templateBorderColor;
+		&:last-child {
+			border-right: none;
+		}
+		> a {
+			.widget-label {
+				color: @grayLight;
+			}
+			&:hover {
+				text-decoration: none;
+				strong {
+					color: @linkColor;
+				}
+			}
+		}
+		.widget-label {
+			display: block;
+			margin: @baseMargin 0 5px;
+			color: @grayLight;
+			text-transform: uppercase;
+		}
+		strong {
+			display: block;
+			color: @headingsColor;
+			font-size: @baseFontSize + 6;
+			.transition(color ease 0.3s);
+		}
+		.sparkline {
+			display: block;
+			margin: 5px auto;
+			canvas {
+				display: block !important;
+				margin: 0 auto;
+			}
+		}
+		.sparkline + strong,
+		.sparkline + a {
+			color: @headingsColor;
+			font-size: @baseFontSize;
+			font-weight: normal;
+			.transition(color ease 0.3s);
+		}
+		.sparkline + a:hover {
+			color: @linkColor;
+		}
+	}
+
+}
+.ie8 .widgets [class*="span"] {
+	margin: 0;
+	width: 150px;
+}
