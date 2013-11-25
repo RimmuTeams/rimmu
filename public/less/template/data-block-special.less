@@ -1,0 +1,67 @@
+
+
+/* Data accordion block */
+.data-block.accordion-block {
+	.accordion {
+		margin-bottom: 0;
+	}
+	.data-container {
+		padding: 0;
+	}
+	.accordion-group {
+		border: none;
+		.border-radius(0);
+		& + .accordion-group {
+			border-top: 1px solid #e5e5e5;
+		}
+	}
+	.accordion-toggle {
+		color: @headingsColor;
+		#font > .shorthand(@baseFontSize + 3, bold, normal);
+		&:hover {
+			color: @linkColor;
+			text-decoration: none;
+		}
+	}
+}
+
+/* Data todo block */
+.data-block.todo-block {
+	header {
+		margin-bottom: 0;
+	}
+	form {
+		margin: 0;
+		background-color: transparent;
+		border: none;
+		.box-shadow(none);
+	}
+	table {
+		margin: 0;
+	}
+	table tr {
+		&:first-child td {
+			border-top: 0;
+		}
+		&.done {
+			.opacity(40);
+			p {
+				text-decoration: line-through;
+			}
+			&:hover {
+				.opacity(100);
+			}
+		}
+		p {
+			margin: 0;
+			line-height: normal;
+			+ span {
+				font-size: @fontSizeMini;
+				color: @blockFooterColor;
+			}
+		}
+		input {
+			margin-top: 0;
+		}
+	}
+}

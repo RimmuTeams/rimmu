@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Course name Grades</title>
+		<meta name="description" content="">
+		<meta name="author" content="Rimmu Team">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jQuery TagsInput Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.tagsinput.css'>
+		
+		<!-- jQuery jWYSIWYG Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jwysiwyg.css'>
+		
+		<!-- Bootstrap wysihtml5 Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/bootstrap-wysihtml5.css'>
+
+		<!-- Date range picker Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/daterangepicker.css'>
+
+		<!-- Timepicker picker Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/bootstrap-timepicker.css'>
+		
+		<!-- jQuery Visualize Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.visualize.css'>
+		
+		<!-- jQuery jGrowl Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.jgrowl.css'>
+
+		<!-- jQuery FullCalendar Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+
+		<!-- CSS styles -->
+		<link rel='stylesheet' type='text/css' href='css/dark.css'>
+		
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="img/icons/apple-touch-icon-57-precomposed.png">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/jquery-ui-1.10.2.custom.min.js"></script>
+
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Tooltips
+				$('[title]').tooltip({
+					placement: 'top'
+				});
+				
+				// Tabs
+				$('.demoTabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+					$('.fullcalendar, .full-calendar-gcal').fullCalendar('render'); // Refresh jQuery FullCalendar for hidden tabs
+				})
+
+			});
+		</script>
+		
+	</head>
+	<body>
+	
+		<!-- Full height wrapper -->
+		<div id="wrapper">
+			
+			<!-- Main page header -->
+			<header id="header" class="container">
+				
+				<!-- Alternative navigation -->
+				<nav>
+					<ul>
+						<li>
+							<form class="nav-search">
+								<input type="text" placeholder="Search&hellip;">
+							</form>
+						</li>
+						<li>
+							<div class="btn-group">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									User Name
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#"><span class="awe-user"></span> Profile</a></li>
+									<li><a href="#"><span class="awe-cog"></span> Settings</a></li>
+									<li><a href="#"><span class="awe-money"></span> Make a Deposit</a></li>
+									<li class="divider"></li>
+									<li><a href="#"><span class="awe-flag"></span> Help</a></li>
+									<li><a href="#"><span class="awe-pencil"></span> Make Money</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
+				</nav>
+				<!-- /Alternative navigation -->
+
+				<!-- Main page logo -->
+				<h1><a href="index.html" class="brand">Rimmu</a></h1>
+
+				
+			</header>
+			<!-- /Main page header -->
+			
+			<!-- Main page container -->
+			<section class="container" role="main">
+
+				<!-- Left (navigation) side -->
+				<div class="navigation-block">
+
+					<!-- User profile -->
+					<section class="user-profile">
+						<figure>
+							<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+							<figcaption>
+								<strong><a href="#" class="">User Name</a></strong>
+								<em>student</em>
+								<ul>
+									<li><a class="btn btn-danger btn-flat" data-toggle="modal" href="#notifModal" title="Notifications"><span class="awe-globe"> 1</span></a></li>
+									<li><a class="btn btn-primary btn-flat" data-toggle="modal" href="#inboxModal" title="Message inbox"><span class="awe-envelope"></span> </a></li>
+								</ul>
+							</figcaption>
+						</figure>
+					</section>
+					<!-- /User profile -->
+					
+					<!-- Sample left search bar -->
+					<section class="balance">
+						<h2>Your Point</h2>
+						<strong>1000</strong>
+					</section>
+					<!-- /Sample left search bar -->
+				
+					<!-- Responsive navbar button -->
+					<div class="navbar">
+						<a class="btn btn-navbar btn-block btn-large" data-toggle="collapse" data-target=".nav-collapse"><span class="awe-home"></span> Dashboard</a>
+					</div>
+					<!-- /Responsive navbar button -->
+
+					<!-- Main navigation -->
+					<nav class="main-navigation nav-collapse collapse" role="navigation">
+						<ul>
+							<li><a href="index.html" class="no-submenu"><span class="awe-home"></span>Dashboard</a></li>
+							<li><a href="tournament.html" class="no-submenu"><span class="awe-trophy"></span>Tournament</a></li>
+							<li><a href="events.html" class="no-submenu"><span class="awe-bookmark"></span>Events</a></li>
+							<li><a href="quiz.html" class="no-submenu"><span class="awe-edit"></span>Quiz</a></li>
+							<li><a href="project.html" class="no-submenu"><span class="awe-cloud"></span>Project <span class="badge">1</span></a></li>
+							<li class="current"><a href="course.html" class="no-submenu"><span class="awe-book"></span>Course <span class="badge">7</span></a></li>
+							<li><a href="drive.html" class="no-submenu"><span class="awe-folder-close"></span>Drive</a></li>
+							<li><a href="calendar.html" class="no-submenu"><span class="awe-calendar"></span>Calendar</a></li>
+						</ul>
+					</nav>
+					<!-- /Main navigation -->
+					
+					<!-- Sample side note -->
+					<section class="side-note">
+						<div class="side-note-container">
+							<h2>Sample Side Note</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</p>
+						</div>
+						<div class="side-note-bottom"></div>
+					</section>
+					<!-- /Sample side note -->
+					
+				</div>
+				<!-- Left (navigation) side -->
+				
+				<!-- Right (content) side -->
+				<div class="content-block" role="main">
+				
+					<!-- Breadcrumb -->
+					<ul class="breadcrumb">
+						<li><a href="course.html">Course</a> <span class="divider">/</span></li>
+						<li><a href="course.html">My Course</a> <span class="divider">/</span></li>
+						<li class="active">Course Name</li>
+					</ul>
+					<!-- /Breadcrumb -->	
+					
+					<!-- Page header -->
+					<article class="page-header">
+						<h1>Course Name</h1>
+					</article>
+					<!-- /Page header -->
+
+					<!-- Grid row -->
+					<div class="row">
+					
+					<!-- Data block -->
+						<article class="span12 data-block">
+							<div class="data-container">
+								<header>
+									<div class="alert alert-info">
+										<button class="close" data-dismiss="alert">&times;</button >
+										<strong>Info alert box!</strong> Also a blue one for tips and info highlights.
+									</div>
+								</header>
+								<section>
+									<div class="row-fluid">
+										<div class="span3">
+											<div class="thumbnail"><img src="http://placekitten.com/300/200" alt="Sample Image"></div>
+											<div class="well small">
+												<p>Lorem ipsum dolor sit amet, adipiscing elit. Phasellus vitae  ac ligula eleifend commodo id quis risus. Donec consequat lorem et metus vitae dapibus felis fermentum.</p>
+											</div>
+										</div>
+										<div class="span9 data-block fit raw">
+											<div class="data-container">
+												<header>
+													<a href="course_preview_updates.html" class="btn btn-flat btn-small"><span class="awe-comments"></span> Updates</a>
+													<a href="course_preview_materials.html" class="btn btn-flat btn-small"><span class="awe-folder-open"></span> Materials</a>
+													<a href="course_preview_grades.html" class="btn btn-flat btn-primary"><span class="awe-signal"></span> Grades</a>
+													<a href="course_preview_absence.html" class="btn btn-flat btn-small"><span class="awe-calendar"></span> Attandance</a>
+													<a href="course_preview_members.html" class="btn btn-flat btn-small"><span class="awe-user"></span> Members</a>
+													<a href="course_settings.html" class="btn btn-flat btn-small"><span class="awe-cog"></span></a>
+													
+												</header>
+												
+												<section>
+													
+													<form class="form-gallery">															
+															<table class="table table-striped table-bordered table-condensed table-hover table-media">
+																<thead>
+																	<tr>
+																		<th>Image</th>
+																		<th>Name</th>
+																		<th>Assignments 1</th>
+																		<th>Quiz 1</th>
+																		<th>Assignments 1</th>
+																		<th>Quiz 2</th>
+																		<th>Progress</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td class="thumbnail"><img alt="John Pixel avatar" src="http://placekitten.com/45/45"></td>
+																		<td>User Name</td>
+																		<td><a class="btn btn-block btn-flat btn-success">90</a></td>
+																		<td><a class="btn btn-block btn-flat btn-warning">70</a></td>
+																		<td><a class="btn btn-block btn-flat btn-danger">40</a></td>
+																		<td><a class="btn btn-block btn-flat"><span class="awe-pencil"></span> Score</a></td>
+																		<td><a class="btn btn-block btn-flat btn-info">View <span class="awe-bar-chart"></span></a></td>
+																	</tr>
+																</tbody>
+															</table>
+														</section>
+
+														</form>
+												</section>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</article>
+						<!-- /Data block -->
+
+
+					
+					
+					</div>
+					<!-- End row-->
+					
+					
+				</div>
+				<!-- /Right (content) side -->
+				
+			</section>
+			<!-- /Main page container -->
+			
+			<!-- Sticky footer push -->
+			<div id="push"></div>
+			
+		</div>
+		<!-- /Full height wrapper -->
+		
+		<div class="modal fade hide" id="notifModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Modal header</h3>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae enim ac ligula eleifend commodo id quis risus. Donec consequat lorem et metus facilisis vitae dapibus felis fermentum. Aenean imperdiet nibh vitae sem condimentum pharetra. Mauris molestie molestie faucibus. Aenean sit amet sem orci, at adipiscing dolor. Fusce feugiat odio vitae erat commodo sed accumsan ante sollicitudin. Integer mollis, tellus vel feugiat varius, risus quam lacinia erat, eu ultricies urna dolor ac metus. Mauris vestibulum euismod lectus, vitae vehicula nisl ullamcorper sit amet. In ac consectetur purus. Integer orci ipsum, sollicitudin non rutrum id, adipiscing eu augue. Nulla eget lorem elit. Curabitur vehicula porttitor suscipit.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-alt" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-alt btn-primary">Save changes</a>
+			</div>
+		</div>
+		
+		<div class="modal fade hide" id="inboxModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Modal header</h3>
+			</div>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae enim ac ligula eleifend commodo id quis risus. Donec consequat lorem et metus facilisis vitae dapibus felis fermentum. Aenean imperdiet nibh vitae sem condimentum pharetra. Mauris molestie molestie faucibus. Aenean sit amet sem orci, at adipiscing dolor. Fusce feugiat odio vitae erat commodo sed accumsan ante sollicitudin. Integer mollis, tellus vel feugiat varius, risus quam lacinia erat, eu ultricies urna dolor ac metus. Mauris vestibulum euismod lectus, vitae vehicula nisl ullamcorper sit amet. In ac consectetur purus. Integer orci ipsum, sollicitudin non rutrum id, adipiscing eu augue. Nulla eget lorem elit. Curabitur vehicula porttitor suscipit.</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-alt" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-alt btn-primary">Save changes</a>
+			</div>
+		</div>
+
+
+		
+		<!-- Main page footer -->
+		<footer id="footer" class="container">
+			<p>Rimmu 2013.</p>
+			<ul>
+				<li><a href="#" class="">About</a></li>
+				<li><a href="#" class="">Terms</a></li>
+				<li><a href="#" class="">Privacy</a></li>
+				<li><a href="#" class="">Policy & Safety</a></li>
+				<li><a href="#" class="">Support</a></li>
+				<li><a href="#" class="">Copyright</a></li>
+				<li><a href="#" class="">Advertising</a></li>
+				<li><a href="#" class="">Send feedback</a></li>
+			</ul>
+			<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+		</footer>
+		<!-- /Main page footer -->
+		
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+
+		<!-- Bootstrap scripts -->
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- Fileupload and Inputmask plugin -->
+		<script src="js/plugins/fileupload/bootstrap-fileupload.js"></script>
+		<script src="js/plugins/inputmask/bootstrap-inputmask.js"></script>
+
+		<!-- Button switch -->
+		<script src="js/plugins/bootstrapSwitch/bootstrapSwitch.js"></script>
+
+		<!-- jQuery TagsInput -->
+		<script src="js/plugins/tagsInput/jquery.tagsinput.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				$('.tagsinput').tagsInput();
+			
+			});
+		</script>
+		
+		<!-- jQuery jWYSIWYG -->
+		<script src="js/plugins/jWYSIWYG/jquery.wysiwyg.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$('.wysiwyg').wysiwyg({
+					controls: {
+						bold          : { visible : true },
+						italic        : { visible : true },
+						underline     : { visible : true },
+						strikeThrough : { visible : true },
+						
+						justifyLeft   : { visible : true },
+						justifyCenter : { visible : true },
+						justifyRight  : { visible : true },
+						justifyFull   : { visible : true },
+			
+						indent  : { visible : true },
+						outdent : { visible : true },
+			
+						subscript   : { visible : true },
+						superscript : { visible : true },
+						
+						undo : { visible : true },
+						redo : { visible : true },
+						
+						insertOrderedList    : { visible : true },
+						insertUnorderedList  : { visible : true },
+						insertHorizontalRule : { visible : true },
+						
+						cut   : { visible : true },
+						copy  : { visible : true },
+						paste : { visible : true }
+					},
+					events: {
+						click: function(event) {
+							if ($("#click-inform:checked").length > 0) {
+								event.preventDefault();
+								alert("You have clicked jWysiwyg content!");
+							}
+						}
+					}
+				});
+				
+			});
+		</script>
+		
+		<!-- Wysihtml5 -->
+		<script src="js/plugins/wysihtml5/wysihtml5-0.3.0.js"></script>
+		<script src="js/plugins/wysihtml5/bootstrap-wysihtml5.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				
+				$('.wysihtml5').wysihtml5();
+				
+			});
+		</script>
+		
+		<!-- Colorpicker -->
+		<script src="js/plugins/colorpicker/bootstrap-colorpicker.js"></script>
+		<script>
+			$(document).ready(function() {
+				
+				var preview = $('.colorpicker-preview')[0].style;
+				$('.colorpicker').colorpicker().on('changeColor', function(ev){
+					preview.backgroundColor = ev.color.toHex();
+				});
+				
+			});
+		</script>
+		
+		<!-- Datepicker -->
+		<script src="js/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script>
+			$(document).ready(function() {
+				
+				$('.datepicker').datepicker({
+					"autoclose": true
+				});
+
+			});
+		</script>
+
+		<!-- Date range picker -->
+		<script type="text/javascript" src="js/plugins/dateRangePicker/date.js"></script>
+		<script type="text/javascript" src="js/plugins/dateRangePicker/daterangepicker.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				$('#demoDaterangePicker').daterangepicker();
+
+			});
+		</script>
+
+		<!-- Timepicker -->
+		<script src="js/plugins/bootstrapTimePicker/bootstrap-timepicker.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				
+				$('#demoTimepicker').timepicker({
+					minuteStep: 5,
+					showInputs: false,
+					disableFocus: true
+				});
+
+			});
+		</script>
+
+		<!-- Form validation -->
+		<script src="js/plugins/bootstrapValidation/jqBootstrapValidation.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$("#demoValidation input").jqBootstrapValidation({
+					submitSuccess: function($form, event) {
+						event.preventDefault();
+					}
+				});
+
+			});
+		</script>
+
+
+	</body>
+</html>

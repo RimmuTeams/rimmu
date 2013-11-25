@@ -1,0 +1,40 @@
+
+/* Accordion */
+.data-block section .accordion {
+	.accordion-group {
+		margin: 0;
+		border-color: @templateBorderColor;
+		border-width: 0 1px 1px 1px;
+		.border-radius(0);
+		&:first-child {
+			border-width: 1px;
+			.border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+		}
+		&:last-child {
+			.border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+		}
+	}
+	.accordion-toggle {
+		font-weight: bold;
+		font-size: @baseFontSize + 3;
+		color: @headingsColor;
+		&:hover {
+			color: @templateColor;
+			text-decoration: none;
+		}
+	}
+}
+.data-block.raw {
+	.accordion-toggle {
+		background-color: @blockBackground;
+		.border-radius(3px);
+		&:hover {
+			background-color: @templateColor;
+			color: @white;
+			text-decoration: none;
+		}
+	}
+}
+.accordion .collapse {
+	overflow: hidden;
+}

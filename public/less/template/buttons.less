@@ -1,0 +1,110 @@
+
+/* Buttons */
+.btn {
+	padding: 4px 10px;
+	.box-shadow(0 1px 2px rgba(0,0,0,.05));
+	&.btn-mini {
+		padding: @paddingMini;
+		font-size: @fontSizeMini;
+	}
+	&.btn-small {
+		padding: @paddingSmall;
+		font-size: @fontSizeSmall;
+	}
+	&.btn-large {
+		padding: @paddingLarge;
+		font-size: @baseFontSize + 2;
+	}
+}
+.btn.btn-alt {
+	.border-radius(18px);
+	.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.15)");
+	&.btn-large {
+		.border-radius(22px);
+	}
+	&.btn-primary {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.5)");
+	}
+	&.btn-warning {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.5)");
+	}
+	&.btn-danger {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.5)");
+	}
+	&.btn-success {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.5)");
+	}
+	&.btn-info {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.5)");
+	}
+	&.btn-inverse {
+		.box-shadow(~"0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.6)");
+	}
+}
+.btn-group > .btn-alt {
+	.border-radius(0);
+}
+.btn-group > .btn.btn-alt:first-child {
+	 -webkit-border-top-left-radius: 18px;
+		 -moz-border-radius-topleft: 18px;
+			 border-top-left-radius: 18px;
+  -webkit-border-bottom-left-radius: 18px;
+	  -moz-border-radius-bottomleft: 18px;
+		  border-bottom-left-radius: 18px;
+}
+.btn-group > .btn.btn-alt:last-child,
+.btn-group > .btn-alt.dropdown-toggle {
+	 -webkit-border-top-right-radius: 18px;
+		 -moz-border-radius-topright: 18px;
+			 border-top-right-radius: 18px;
+  -webkit-border-bottom-right-radius: 18px;
+	  -moz-border-radius-bottomright: 18px;
+		  border-bottom-right-radius: 18px;
+}
+.btn-group > .btn.btn-large.btn-alt:first-child {
+	 -webkit-border-top-left-radius: 22px;
+		 -moz-border-radius-topleft: 22px;
+			 border-top-left-radius: 22px;
+  -webkit-border-bottom-left-radius: 22px;
+	  -moz-border-radius-bottomleft: 22px;
+		  border-bottom-left-radius: 22px;
+}
+.btn-group > .btn.btn-large.btn-alt:last-child,
+.btn-group > .btn-large.btn-alt.dropdown-toggle {
+	 -webkit-border-top-right-radius: 22px;
+		 -moz-border-radius-topright: 22px;
+			 border-top-right-radius: 22px;
+  -webkit-border-bottom-right-radius: 22px;
+	  -moz-border-radius-bottomright: 22px;
+		  border-bottom-right-radius: 22px;
+}
+.btn.btn-flat {
+	padding: 5px 12px;
+	.flatButtonBackground(darken(@btnBackground, 10%), @textColor);
+	&.btn-primary {
+		.flatButtonBackground(@btnPrimaryBackground, @white);
+	}
+	&.btn-warning {
+		.flatButtonBackground(@btnWarningBackground, @white);
+	}
+	&.btn-danger {
+		.flatButtonBackground(@btnDangerBackground, @white);
+	}
+	&.btn-success {
+		.flatButtonBackground(@btnSuccessBackground, @white);
+	}
+	&.btn-info {
+		.flatButtonBackground(@btnInfoBackground, @white);
+	}
+	&.btn-inverse {
+		.flatButtonBackground(@btnInverseBackground, @white);
+	}
+}
+.btn.disabled,
+.btn[disabled] {
+	cursor: default;
+	background-color: darken(@white, 10%);
+	background-image: none;
+	.opacity(65);
+	.box-shadow(none);
+}
