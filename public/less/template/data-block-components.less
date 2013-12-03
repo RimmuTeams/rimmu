@@ -1,0 +1,110 @@
+
+/* Data block header controls */
+.data-block header {
+	h2 + .btn,
+	h2 + .btn-group,
+	.data-header-actions {
+		float: right;
+		margin: -5px 0 0;
+		padding: 0;
+		list-style: none;
+		.clearfix();
+		li {
+			float: left;
+			display: block;
+			& + li {
+				margin-left: 5px;
+			}
+			&.active {
+				.btn {
+					.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					&.btn-primary {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+					&.btn-warning {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+					&.btn-danger {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+					&.btn-success {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+					&.btn-info {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+					&.btn-inverse {
+						.box-shadow(~"0 2px 4px rgba(0, 0, 0, 0.15) inset, 0 1px 2px rgba(0, 0, 0, 0.05)");
+					}
+				}
+				.btn.btn-flat {
+					background-color: darken(@btnBackground, 15%);
+					.box-shadow(~"inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)");
+					&.btn-primary {
+						background-color: darken(@btnPrimaryBackground, 15%);
+					}
+					&.btn-warning {
+						background-color: darken(@btnWarningBackground, 15%);
+					}
+					&.btn-danger {
+						background-color: darken(@btnDangerBackground, 15%);
+					}
+					&.btn-success {
+						background-color: darken(@btnSuccessBackground, 15%);
+					}
+					&.btn-info {
+						background-color: darken(@btnInfoBackground, 15%);
+					}
+					&.btn-inverse {
+						background-color: darken(@btnInverseBackground, 15%);
+					}
+				}
+				.btn.btn-alt {
+					.box-shadow(0 1px 0 rgba(0, 0, 0, 0.1) inset);
+					&.btn-primary {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.2) inset);
+					}
+					&.btn-warning {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.2) inset);
+					}
+					&.btn-danger {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.3) inset);
+					}
+					&.btn-success {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.2) inset);
+					}
+					&.btn-info {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.3) inset);
+					}
+					&.btn-inverse {
+						.box-shadow(0 1px 0 rgba(0, 0, 0, 0.8) inset);
+					}
+				}
+			}
+			.loading {
+				display: block;
+			}
+		}
+	}
+}
+.data-block.raw header .data-header-actions {
+	margin: 0;
+}
+
+/* Data block header search */
+.data-block header {
+	.header-search {
+		display: inline;
+		float: right;
+		background-color: transparent;
+		border: none;
+		margin: 0;
+		.box-shadow(none);
+		input {
+			margin: 0;
+			padding: 2px 10px;
+			font-size: @fontSizeSmall;
+			.border-radius(15px);
+		}
+	}
+}

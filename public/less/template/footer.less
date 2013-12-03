@@ -1,0 +1,40 @@
+
+/* Main footer */
+#footer {
+	background-image:  url("@{footerBackgroundImage}");
+	background-repeat: repeat-x;
+	background-position: top;
+	.clearfix();
+	p {
+		margin: @baseMargin 0 @baseMargin / 2;
+		float: left;
+		a {
+			color: @blockTextColor;
+			&:hover {
+				color: darken(@blockTextColor, 10%);
+			}
+		}
+		& + ul {
+			margin-left: 10px;
+		}
+	}
+	ul {
+		margin: @baseMargin 0 0;
+		padding: 0;
+		list-style: none;
+		float: left;
+		.clearfix();
+		li {
+			float: left;
+			display: block;
+			+ li {
+				margin-left: 10px;
+			}
+		}
+	}
+	.btn.btn-flat {
+		margin-top: 15px;
+		padding: 1px 8px;
+		font-size: @fontSizeSmall;
+	}
+}

@@ -1,0 +1,68 @@
+
+/* Tabs */
+.nav-tabs {
+	& > li {
+		margin-bottom: 0;
+	}
+}
+.tabs-left {
+	.tab-content {
+		margin: 0;
+		padding-left: @baseMargin;
+		border-left: 1px solid @templateBorderColor;
+	}
+	& > .nav-tabs {
+		border-right: 1px solid @templateBorderColor;
+		margin-right: -1px;
+		.active > a,
+		.active > a:hover {
+			color: @templateColor;
+			background-color: @blockBackground;
+			border: none;
+			border-top: 1px solid @templateBorderColor;
+			border-bottom: 1px solid @templateBorderColor;
+		}
+		& > li > a {
+			.border-radius(0);
+			color: @blockTextColor;
+			&:hover {
+				border-color: transparent @templateBorderColor transparent transparent;
+				background-color: @blockBackground;
+				color: @templateColor;
+			}
+		}
+	}
+}
+.tabs-right {
+	.tab-content {
+		padding-right: @baseMargin;
+		border-right: 1px solid @templateBorderColor;
+	}
+	& > .nav-tabs {
+		border-left: 1px solid @templateBorderColor;
+		margin-left: -1px;
+		.active > a,
+		.active > a:hover {
+			color: @templateColor;
+			background-color: @blockBackground;
+			border: none;
+			border-top: 1px solid @templateBorderColor;
+			border-bottom: 1px solid @templateBorderColor;
+		}
+		& > li > a {
+			.border-radius(0);
+			color: @blockTextColor;
+			&:hover {
+				border-color: transparent transparent transparent @templateBorderColor;
+				background-color: @blockBackground;
+				color: @templateColor;
+			}
+		}
+	}
+}
+.tab-content {
+	overflow: visible;
+}
+.tabbable .tab-content {
+	overflow: auto;
+}

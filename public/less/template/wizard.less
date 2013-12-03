@@ -1,0 +1,105 @@
+
+
+/* Wizard */
+.wizard {
+	overflow: visible;
+	.stepContainer {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		height: 100%;
+		& > div.content {
+			margin: 0;
+			padding: @baseMargin;
+			display: block;
+			position: absolute;
+			text-align: left;
+			overflow: visible;
+			z-index: 88;
+		}
+		// Wizard content header
+		.StepTitle {
+			display: block;
+			z-index: 88;
+			.clearfix();
+		}
+	}
+	// Wizard navigation 
+	ul.anchor {
+		margin: 0 0 @baseMargin / 2;
+		text-align: center;
+		background-color: #f5f5f5;
+		border: 1px solid #dedede;
+		.border-radius(@baseBorderRadius);
+		li {
+			margin-left: @baseMargin;
+			display: inline-block;
+			&:first-child {
+				margin: 0;
+			}
+			a {
+				display: block;
+				font-size: @baseFontSize + 2;
+				line-height: @baseLineHeight * 2;
+				text-decoration: none;
+				outline-style: none;
+				.clearfix();
+				z-index: 99;
+				&.selected {
+					color: @templateColor;
+					cursor: text;
+				}
+				&.done {
+					color: @templateColor;
+					text-decoration: line-through;
+					.stepDesc {
+						color: @templateColor;
+					}
+				}
+				&.disabled {
+					color: @textColor;
+					cursor: text;
+				}
+			}
+		}
+	}
+	// Pagination 
+	& > div.actionBar {
+		margin-top:@baseMargin / 3;
+		display: block;
+		text-align: left;
+		overflow: auto;
+		z-index: 88; 
+		.clearfix();
+	}
+	.buttonDisabled {
+		.btn.disabled;
+		cursor: text !important;
+	}
+	.buttonNext,
+	.buttonPrevious,
+	.buttonFinish {
+		display: block;
+		text-decoration: none;
+		.btn;
+		.btn-primary;
+	}
+	.buttonNext {
+		float: right;
+		margin-right: 5px;
+	}
+	.buttonPrevious {
+		float: left;
+	}
+	.buttonFinish {
+		float: right;
+	}
+}
+.wizard .loader {
+	position: relative;
+	display: none;
+	float: left;
+	margin: 2px 0 0 2px;
+	padding: 8px 10px 8px 40px;
+	z-index: 998;
+}
