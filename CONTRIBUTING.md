@@ -20,4 +20,3 @@ Rimmu follows the [PSR-0](https://github.com/php-fig/fig-standards/blob/master/a
 - Namespace declarations should be on the same line as `<?php`.
 - Class opening `{` should be on the same line as the class name.
 - Function and control structure opening `{` should be on a separate line.
-- Interface names are suffixed with `Interface` (`FooInterface`)
