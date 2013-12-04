@@ -13,5 +13,46 @@
 
 Route::get('/', function()
 {
+<<<<<<< HEAD
 	return View::make('index');
 });
+=======
+	return View::make('modules.dash');
+});
+
+
+Route::get('/tournament', function()
+{
+	return View::make('modules.tournament');
+});
+
+Route::get('/events', function()
+{
+	return View::make('modules.events');
+});
+
+Route::get('/quiz', function()
+{
+	return View::make('modules.quiz');
+});
+
+Route::get('/project', function()
+{
+	return View::make('modules.project');
+});
+
+Route::get('/course', function()
+{
+	return View::make('modules.course');
+});
+
+Route::get('/drive', function()
+{
+	return View::make('modules.drive');
+});
+
+Route::get('/calendar', function()
+{
+	return View::make('modules.calendar');
+});
+>>>>>>> 4337e72dea8d9061aee7eca08f8a04ad2331bce0

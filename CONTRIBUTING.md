@@ -1,26 +1,22 @@
-# Contribution Guidelines
+# Rimmu Contribution Guide
+
+This page contains guidelines for contributing to the Rimmu Open E-learning Project. Please review these guidelines before submitting any pull requests to the framework.
 
 
-Code : Laravel 
-Database : MySQL
+## Pull Requests
 
-Template Engine : Bootstrap 2.3 + Jquery
+The pull request process differs for new features and bugs. Before sending a pull request for a new feature, you should first create an issue with `[Proposal]` in the title. The proposal should describe the new feature, as well as implementation ideas. The proposal will then be reviewed and either approved or denied. Once a proposal is approved, a pull request may be created implementing the new feature. Pull requests which do not follow this guideline will be closed immediately.
 
+Pull requests for bugs may be sent without creating any proposal issue. If you believe that you know of a solution for a bug that has been filed on Github, please leave a comment detailing your proposed fix.
 
+### Feature Requests
 
+If you have an idea for a new feature you would like to see added to Rimmu, you may create an issue on Github with `[Request]` in the title. The feature request will then be reviewed by a core contributor.
 
-Halaman Dashboard akan di isi oleh list dari project - project dimana project itu sendiri adalah proyek pembuatan ide oleh peserta untuk menjadi sebuah produk atau barang.... Halaman project bertujuan untuk membangun rasa keberanian siswa dalam mebuat proyek ilmiah atau lainnya sehingga akan semakin banyak karya keratif lainnya. Pada halaman ini proyek akan di sorting melalui filter : Hot Trending dan New (seperti pada 9gag)
+## Coding Guidelines
 
-Halaman Tournament akan disi oleh list dari tournament dimana pengguna (siswa / guru) dapat membuat sebuah tantangan untuk para murid nya dengan mengadakan tantangan ini maka siswa di harapkan akan lebih aktif belajar dan aktif dalam menggunakan rimmu sebagai open e-learning platformnya
+Rimmu follows the [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md) and [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md) coding standards. In addition to these standards, below is a list of other coding standards that should be followed:
 
-Halaman Event akan disi oleh list dari acara-acara yang dapat di buat oleh siswa / guru dalam konten konten pendidikan semisal Seminar , Workshop dan hal lainnya. DImana pengguna dapat mendaftarkan diri dalam kegiatan tersebut dan pembuat acara (admin) dapat mengetahui siapa saja yang telah mendaftar
-
-Halaman Quiz akan diisi oleh list dari quiz dimana pengguna siswa / guru dapat membuat quiz sebagai alat hiburan atau bahkan sebagai alat pengukur (ujian) yang di selenggarakan secara terbuka.
-
-Halaman Project akan disi oleh list pribadi proyek si pengguna
-
-Halaman Course halaman ini diisi oleh list dari kelas kelas yang telah di buat oleh para pengajar , halaman ini akan menfilter kelas dengan filter Hot , Tranding dan New
-
-Halaman Drive : di fungsikan untuk menjadikan hard drive online untuk pengguna
-
-Halaman Calendar di fungsikan untuk jadwal dan penjadwalan untuk pengguna
+- Namespace declarations should be on the same line as `<?php`.
+- Class opening `{` should be on the same line as the class name.
+- Function and control structure opening `{` should be on a separate line.
